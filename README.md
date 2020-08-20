@@ -38,9 +38,6 @@ Now clone the Go/TypeScript example and build it.
 ```sh
 git clone https://github.com/metacall/golang-typescript-example.git
 cd golang-typescript-example
-export CGO_CFLAGS="-I/usr/local/include"
-export CGO_LDFLAGS="-L/usr/local/lib"
-go get -u github.com/metacall/core/source/ports/go_port/source
 go build main.go
 ```
 

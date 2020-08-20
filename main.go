@@ -23,7 +23,7 @@ func main() {
 		return
 	}
 
-	ret, err := metacall.MetaCall("sum", 30.0, 20.0)
+	ret, err := metacall.Call("sum", 30.0, 20.0)
 
 	if err != nil {
 		fmt.Println(err)

@@ -1,3 +1,5 @@
 **
 !main.go
+!go.mod
+!go.sum
 !script.ts

@@ -62,7 +62,7 @@ RUN git clone --branch v0.2.22 https://github.com/metacall/core \
 	&& cmake --build . --target install
 
 # Copy source files
-COPY main.go /root
+COPY main.go go.mod go.sum /root/
 COPY script.ts /home/scripts/script.ts
 
 # Set up enviroment variables
@@ -70,10 +70,7 @@ ENV LOADER_LIBRARY_PATH=/usr/local/lib \
 	LOADER_SCRIPT_PATH=/home/scripts
 
 # Build the go source (and run the executable for testing)
-RUN export CGO_CFLAGS="-I/usr/local/include" \
-	&& export CGO_LDFLAGS="-L/usr/local/lib" \
-	&& go get -u github.com/metacall/core/source/ports/go_port/source \
-	&& go build main.go \
+RUN go build main.go \
 	&& ./main
 
 CMD [ "/root/main" ]
