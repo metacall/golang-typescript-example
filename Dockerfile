@@ -46,7 +46,7 @@ WORKDIR /root
 ARG DISABLE_CACHE=0
 
 # Clone and build the project
-RUN git clone --branch v0.5 https://github.com/metacall/core \
+RUN git clone --branch v0.5.1 https://github.com/metacall/core \
 	&& mkdir core/build && cd core/build \
 	&& cmake \
 		-DNODEJS_CMAKE_DEBUG=On \

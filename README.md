@@ -17,7 +17,7 @@ Apart from this, you will need Go installed in order to build the main applicati
 Build MetaCall first, with NodeJS and TypeScript loaders enabled:
 
 ```bash
-git clone --branch v0.5 https://github.com/metacall/core
+git clone --branch v0.5.1 https://github.com/metacall/core
 mkdir core/build && cd core/build
 cmake \
 	-DNODEJS_CMAKE_DEBUG=On \
