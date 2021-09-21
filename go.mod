@@ -1,4 +1,4 @@
-module github.com/metacall/golang-nodejs-example
+module github.com/metacall/golang-typescript-example
 
 go 1.14
 
