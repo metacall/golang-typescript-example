@@ -4,27 +4,27 @@ This example shows how to embed TypeScript into Go using MetaCall. In other word
 
 ## Dependencies
 
-For building this example you need NodeJS to be installed in the system (10.x has been tested) and Python 2.7 available as `python` command (due to NodeJS build system dependency). For debian based distros:
+For building this example you need NodeJS to be installed in the system (12.x has been tested). For debian based distros:
 
 ```bash
-sudo apt-get install -y --no-install-recommends build-essential cmake ca-certificates git nodejs npm python2.7 node-gyp unzip
-sudo npm install -g npm@latest
-alias python=/usr/bin/python2.7
+sudo apt-get install -y --no-install-recommends build-essential cmake ca-certificates git nodejs npm unzip
 ```
 
-Apart from this, you will need Go installed in order to build the main application. I have used Go 1.14 and 1.15.
+Apart from this, you will need Go installed in order to build the main application. I have used Go 1.17.
 
 ## Build
 
 Build MetaCall first, with NodeJS and TypeScript loaders enabled:
 
 ```bash
-git clone --branch v0.2.22 https://github.com/metacall/core
+git clone --branch v0.5 https://github.com/metacall/core
 mkdir core/build && cd core/build
 cmake \
 	-DNODEJS_CMAKE_DEBUG=On \
 	-DOPTION_BUILD_LOADERS_NODE=On \
 	-DOPTION_BUILD_LOADERS_TS=On \
+	-DOPTION_BUILD_PORTS=On \
+	-DOPTION_BUILD_PORTS_NODE=On \
 	-DOPTION_BUILD_DETOURS=Off \
 	-DOPTION_BUILD_SCRIPTS=Off \
 	-DOPTION_BUILD_TESTS=Off \
