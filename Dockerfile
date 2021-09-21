@@ -59,7 +59,8 @@ RUN git clone --branch v0.5 https://github.com/metacall/core \
 		-DOPTION_BUILD_TESTS=Off \
 		-DOPTION_BUILD_EXAMPLES=Off \
 		.. \
-	&& cmake --build . --target install
+	&& cmake --build . --target install \
+	&& ldconfig /usr/local/lib
 
 # Copy source files
 COPY main.go go.mod go.sum /root/
@@ -70,8 +71,7 @@ ENV LOADER_LIBRARY_PATH=/usr/local/lib \
 	LOADER_SCRIPT_PATH=/home/scripts
 
 # Build the go source (and run the executable for testing)
-RUN ldconfig /usr/local/lib \
-	&& go build main.go \
+RUN go build main.go \
 	&& ./main
 
 CMD [ "/root/main" ]

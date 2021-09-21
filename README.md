@@ -31,6 +31,7 @@ cmake \
 	-DOPTION_BUILD_EXAMPLES=Off \
 	..
 cmake --build . --target install
+ldconfig /usr/local/lib
 ```
 
 Now clone the Go/TypeScript example and build it.
