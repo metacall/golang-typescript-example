@@ -42,9 +42,6 @@ RUN apt-get update \
 # Set working directory to home
 WORKDIR /root
 
-# Force rebuild for latest version
-ARG DISABLE_CACHE=0
-
 # Clone and build the project
 RUN git clone --branch v0.5.2 https://github.com/metacall/core \
 	&& mkdir core/build && cd core/build \
