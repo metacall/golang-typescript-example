@@ -57,6 +57,6 @@ export LOADER_SCRIPT_PATH="`pwd`"
 Building and running with Docker:
 
 ```bash
-docker build --build-arg DISABLE_CACHE=`date +%s` -t metacall/golang-typescript-example .
+docker build -t metacall/golang-typescript-example .
 docker run --rm -it metacall/golang-typescript-example
 ```
