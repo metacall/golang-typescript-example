@@ -36,8 +36,7 @@ RUN apt-get update \
 		git \
 		nodejs \
 		npm \
-		unzip \
-	&& npm install -g npm@latest
+		unzip
 
 # Set working directory to home
 WORKDIR /root
